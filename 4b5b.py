@@ -2,7 +2,6 @@ import argparse
 
 #for each 4 bits in the bitstream entered
 #split into sections of 4 bits
-#how to deal with trailing digits e.g. less than 4bits
 
 parser = argparse.ArgumentParser(description="Calculate the 4B5B mapping of 4 binary bits")
 parser.add_argument('encodedbits', type=str, help="Binary code you want to transmit e.g. '101010101101'")
@@ -16,6 +15,8 @@ s = args.encodedbits
 
 if len(s) % 4 != 0:
     print("Error, can only process groups of 4 bits")
+
+#how to deal with trailing digits e.g. less than 4bits
 
 # length = len(s) % 4
 # if length % 4 == 1:
@@ -36,7 +37,7 @@ while s:
     o.append(s[:4])
     s = s[4:]
    
-print (o)
+# print(o)
 
 for i, k in mydict.items():
     for j in o:
